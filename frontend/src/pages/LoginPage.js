@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button, Grid, Box, Typography, Paper, Checkbox, FormControlLabel, TextField, CssBaseline, IconButton, InputAdornment, CircularProgress, Backdrop } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import bgpic from "../assets/designlogin.jpg"
-import { LightPurpleButton } from '../components/buttonStyles';
+import bgpic from  '../assets/sahyadrilogo.png'
+import { BlueButton, LightPurpleButton } from '../components/buttonStyles';
 import styled from 'styled-components';
 import { loginUser } from '../redux/userRelated/userHandle';
 import Popup from '../components/Popup';
@@ -48,6 +48,7 @@ const LoginPage = ({ role }) => {
             setLoader(true)
             dispatch(loginUser(fields, role))
         }
+        
 
         else {
             const email = event.target.email.value;
@@ -95,6 +96,12 @@ const LoginPage = ({ role }) => {
             setGuestLoader(true)
             dispatch(loginUser(fields, role))
         }
+        else if (role === "Parent") {
+            const studentName = "Dipesh Awasthi"
+            const fields = { studentName, password }
+            setGuestLoader(true)
+            dispatch(loginUser(fields, role))
+        }
     }
 
     useEffect(() => {
@@ -106,6 +113,9 @@ const LoginPage = ({ role }) => {
                 navigate('/Student/dashboard');
             } else if (currentRole === 'Teacher') {
                 navigate('/Teacher/dashboard');
+            }
+            else if (currentRole === 'Parent') {
+                navigate('/Parent/dashboard');
             }
         }
         else if (status === 'failed') {
@@ -149,7 +159,7 @@ const LoginPage = ({ role }) => {
                                         required
                                         fullWidth
                                         id="rollNumber"
-                                        label="Enter your Roll Number"
+                                        label="Enter student Roll Number"
                                         name="rollNumber"
                                         autoComplete="off"
                                         type="number"
@@ -163,7 +173,7 @@ const LoginPage = ({ role }) => {
                                         required
                                         fullWidth
                                         id="studentName"
-                                        label="Enter your name"
+                                        label="Enter student name"
                                         name="studentName"
                                         autoComplete="name"
                                         autoFocus
@@ -222,7 +232,7 @@ const LoginPage = ({ role }) => {
                                     Forgot password?
                                 </StyledLink>
                             </Grid>
-                            <LightPurpleButton
+                            <BlueButton
                                 type="submit"
                                 fullWidth
                                 variant="contained"
@@ -231,15 +241,15 @@ const LoginPage = ({ role }) => {
                                 {loader ?
                                     <CircularProgress size={24} color="inherit" />
                                     : "Login"}
-                            </LightPurpleButton>
-                            <Button
+                            </BlueButton>
+                            {/* <Button
                                 fullWidth
                                 onClick={guestModeHandler}
                                 variant="outlined"
                                 sx={{ mt: 2, mb: 3, color: "#7f56da", borderColor: "#7f56da" }}
                             >
                                 Login as Guest
-                            </Button>
+                            </Button> */}
                             {role === "Admin" &&
                                 <Grid container>
                                     <Grid>
@@ -267,6 +277,11 @@ const LoginPage = ({ role }) => {
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
+                        width:'150px',
+                        height:'170px',
+                        position:'relative',
+                        top:'250px'
+                                            
                     }}
                 />
             </Grid>

@@ -8,7 +8,7 @@ import {
   CircularProgress,
   Backdrop,
 } from '@mui/material';
-import { AccountCircle, School, Group } from '@mui/icons-material';
+import { AccountCircle, School, Group, AccountCircleRounded, AccountCircleSharp, Person } from '@mui/icons-material';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../redux/userRelated/userHandle';
@@ -62,6 +62,17 @@ const ChooseUser = ({ visitor }) => {
         navigate('/Teacherlogin');
       }
     }
+    else if (user === "Parent") {
+      if (visitor === "guest") {
+        const email = "mom@12"
+        const fields = { email, password }
+        setLoader(true)
+        dispatch(loginUser(fields, user))
+      }
+      else {
+        navigate('/Parentlogin');
+      }
+    }
   }
 
   useEffect(() => {
@@ -74,6 +85,11 @@ const ChooseUser = ({ visitor }) => {
       } else if (currentRole === 'Teacher') {
         navigate('/Teacher/dashboard');
       }
+      else if (currentRole === 'Parent') {
+        navigate('/Parent/dashboard');
+      }
+      
+      
     }
     else if (status === 'error') {
       setLoader(false)
@@ -86,7 +102,7 @@ const ChooseUser = ({ visitor }) => {
     <StyledContainer>
       <Container>
         <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={3}>
             <div onClick={() => navigateHandler("Admin")}>
               <StyledPaper elevation={3}>
                 <Box mb={2}>
@@ -99,7 +115,7 @@ const ChooseUser = ({ visitor }) => {
               </StyledPaper>
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={3}>
             <StyledPaper elevation={3}>
               <div onClick={() => navigateHandler("Student")}>
                 <Box mb={2}>
@@ -112,7 +128,7 @@ const ChooseUser = ({ visitor }) => {
               </div>
             </StyledPaper>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={3}>
             <StyledPaper elevation={3}>
               <div onClick={() => navigateHandler("Teacher")}>
                 <Box mb={2}>
@@ -122,6 +138,19 @@ const ChooseUser = ({ visitor }) => {
                   Teacher
                 </StyledTypography>
                 Login as a teacher to create courses, assignments, and track student progress.
+              </div>
+            </StyledPaper>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <StyledPaper elevation={3}>
+              <div onClick={() => navigateHandler("Parent")}>
+                <Box mb={2}>
+                  <Person fontSize="large" />
+                </Box>
+                <StyledTypography>
+                  Parent
+                </StyledTypography>
+                Login as a parent to check attendance status and marks.
               </div>
             </StyledPaper>
           </Grid>

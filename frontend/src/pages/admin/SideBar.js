@@ -6,10 +6,10 @@ import HomeIcon from "@mui/icons-material/Home";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
+// import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
-import ReportIcon from '@mui/icons-material/Report';
+// import ReportIcon from '@mui/icons-material/Report';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
 const SideBar = () => {
@@ -47,7 +47,13 @@ const SideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Students" />
                 </ListItemButton>
-                <ListItemButton component={Link} to="/Admin/notices">
+                <ListItemButton component={Link} to="/Admin/parent">
+                    <ListItemIcon>
+                        <PersonOutlineIcon color={location.pathname.startsWith("/Admin/parent") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Parents" />
+                </ListItemButton>
+                {/* <ListItemButton component={Link} to="/Admin/notices">
                     <ListItemIcon>
                         <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Admin/notices") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
@@ -58,7 +64,7 @@ const SideBar = () => {
                         <ReportIcon color={location.pathname.startsWith("/Admin/complains") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary="Complains" />
-                </ListItemButton>
+                </ListItemButton> */}
             </React.Fragment>
             <Divider sx={{ my: 1 }} />
             <React.Fragment>

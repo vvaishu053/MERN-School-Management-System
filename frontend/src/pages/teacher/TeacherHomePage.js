@@ -1,5 +1,5 @@
 import { Container, Grid, Paper } from '@mui/material'
-import SeeNotice from '../../components/SeeNotice';
+// import SeeNotice from '../../components/SeeNotice';
 import CountUp from 'react-countup';
 import styled from 'styled-components';
 import Students from "../../assets/img1.png";
@@ -55,7 +55,7 @@ const TeacherHomePage = () => {
                             <Title>
                                 Tests Taken
                             </Title>
-                            <Data start={0} end={24} duration={4} />
+                            <Data start={0} end={6} duration={4} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
@@ -64,13 +64,13 @@ const TeacherHomePage = () => {
                             <Title>
                                 Total Hours
                             </Title>
-                            <Data start={0} end={30} duration={4} suffix="hrs"/>                        </StyledPaper>
+                            <Data start={0} end={24} duration={4} suffix="hrs"/>                        </StyledPaper>
                     </Grid>
-                    <Grid item xs={12}>
+                    {/* <Grid item xs={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                             <SeeNotice />
                         </Paper>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Container>
         </>
