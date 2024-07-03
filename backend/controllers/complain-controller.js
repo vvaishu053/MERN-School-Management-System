@@ -24,3 +24,4 @@ const complainList = async (req, res) => {
 };
 
 module.exports = { complainCreate, complainList };
+
