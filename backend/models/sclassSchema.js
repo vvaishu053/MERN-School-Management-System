@@ -13,3 +13,4 @@ const sclassSchema = new mongoose.Schema({
 
 module.exports = mongoose.model("sclass", sclassSchema);
 
+
