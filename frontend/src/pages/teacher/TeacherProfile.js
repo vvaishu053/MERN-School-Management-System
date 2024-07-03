@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { Card, CardContent, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
-
+ 
 const TeacherProfile = () => {
   const { currentUser, response, error } = useSelector((state) => state.user);
 
