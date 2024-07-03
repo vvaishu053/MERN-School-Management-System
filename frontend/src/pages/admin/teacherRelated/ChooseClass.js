@@ -76,7 +76,7 @@ const ChooseClass = ({ situation }) => {
                 </>
             }
         </>
-    )
+    ) 
 }
 
 export default ChooseClass
