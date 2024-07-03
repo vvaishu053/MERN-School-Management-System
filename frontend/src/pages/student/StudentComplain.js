@@ -4,7 +4,7 @@ import Popup from '../../components/Popup';
 import { BlueButton } from '../../components/buttonStyles';
 import { addStuff } from '../../redux/userRelated/userHandle';
 import { useDispatch, useSelector } from 'react-redux';
-
+ 
 const StudentComplain = () => {
     const [complaint, setComplaint] = useState("");
     const [date, setDate] = useState("");
