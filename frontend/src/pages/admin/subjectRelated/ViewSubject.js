@@ -206,6 +206,6 @@ const ViewSubject = () => {
       }
     </>
   )
-}
+} 
 
 export default ViewSubject
