@@ -47,4 +47,4 @@ export const updateTeachSubject = (teacherId, teachSubject) => async (dispatch) 
     } catch (error) {
         dispatch(getError(error));
     }
-}
+} 
