@@ -90,11 +90,7 @@ const StudentHomePage = () => {
                                     </>
                             }
                         </ChartContainer>
-                    {/* </Grid>
-                    <Grid item xs={12}>
-                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                            <SeeNotice />
-                        </Paper> */}
+                   
                     </Grid>
                 </Grid>
             </Container>
