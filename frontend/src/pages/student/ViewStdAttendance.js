@@ -182,7 +182,7 @@ const ViewStdAttendance = () => {
                             </Typography>
                         </>
                     }
-                </div>
+                </div> 
             }
         </>
     )
