@@ -211,6 +211,6 @@ const TeacherViewStudent = () => {
             }
         </>
     )
-}
+} 
 
 export default TeacherViewStudent
