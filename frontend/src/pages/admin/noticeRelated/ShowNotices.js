@@ -98,5 +98,5 @@ const ShowNotices = () => {
         </>
     );
 };
-
+ 
 export default ShowNotices;
