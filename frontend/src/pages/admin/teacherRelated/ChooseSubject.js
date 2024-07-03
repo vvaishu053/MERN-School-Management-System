@@ -7,6 +7,7 @@ import { updateTeachSubject } from '../../../redux/teacherRelated/teacherHandle'
 import { GreenButton, PurpleButton } from '../../../components/buttonStyles';
 import { StyledTableCell, StyledTableRow } from '../../../components/styles';
 
+
 const ChooseSubject = ({ situation }) => {
     const params = useParams();
     const navigate = useNavigate()
