@@ -11,6 +11,7 @@ import { registerUser } from '../../redux/userRelated/userHandle';
 import styled from 'styled-components';
 import Popup from '../../components/Popup';
 
+
 const defaultTheme = createTheme();
 
 const AdminRegisterPage = () => {
