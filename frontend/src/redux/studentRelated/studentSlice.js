@@ -54,4 +54,4 @@ export const {
     stuffDone,
 } = studentSlice.actions;
 
-export const studentReducer = studentSlice.reducer;
+export const studentReducer = studentSlice.reducer; 
