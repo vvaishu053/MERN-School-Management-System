@@ -52,5 +52,5 @@ export const {
     doneSuccess,
     postDone
 } = teacherSlice.actions;
-
+ 
 export const teacherReducer = teacherSlice.reducer;
