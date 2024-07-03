@@ -39,4 +39,4 @@ export const {
     getError
 } = noticeSlice.actions;
 
-export const noticeReducer = noticeSlice.reducer;
+export const noticeReducer = noticeSlice.reducer; 
