@@ -88,5 +88,5 @@ export const {
     getSubDetailsSuccess,
     getSubDetailsRequest
 } = sclassSlice.actions;
-
+ 
 export const sclassReducer = sclassSlice.reducer;
