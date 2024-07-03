@@ -78,4 +78,4 @@ const AddNotice = () => {
   );
 };
 
-export default AddNotice;
+export default AddNotice; 
